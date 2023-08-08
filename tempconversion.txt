@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+inline void keep_window_open() { char ch; cin>>ch; }
+
+int main()
+{   
+   double temp;
+   double swp;
+   char unit;
+
+   std::cout << "***TEMP Conversion Program***";
+   std::cout << "\n";
+   
+   std::cout << "What is your temperature? ";
+   std::cin >> temp;
+
+   std::cout << "What value/unit (F or C)? ";
+   std::cin >> unit;
+
+   if (unit == 'f' || unit == 'F'){
+    std::cout << temp << " degrees fahrenheit";
+    std::cout << "\n";
+    swp = (temp - 32.0)/(1.8);
+    std::cout << "Also, " << swp << " degrees celcius";
+   }
+   else if (unit == 'c' || unit == 'C'){
+    std::cout << temp << " degrees celcius";
+    std::cout << "\n";
+    swp = temp*1.8+32.0;
+    std::cout << "Also, " << swp << " degrees fahrenheit";
+   }
+   else{
+    std::cout << "This is not an appropriate unit type";
+    std::cout << "\nTry again!";
+   }
+    return 0;
+}
